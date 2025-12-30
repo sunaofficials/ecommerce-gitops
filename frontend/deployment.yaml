@@ -16,17 +16,19 @@ spec:
       containers:
         - name: frontend
           image: sunaodisha/ecommerce-frontend:5
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 8080
-            initialDelaySeconds: 5
-            periodSeconds: 5
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8080
-            initialDelaySeconds: 10
-            periodSeconds: 10
+          env:
+            - name: PRODUCT_CATALOG_SERVICE_ADDR
+              value: "product-catalog.ecommerce:8080"
+            - name: CARTS_SERVICE_ADDR
+              value: "carts.ecommerce:8080"
+            - name: USER_SERVICE_ADDR
+              value: "user.ecommerce:8080"
+            - name: ORDERS_SERVICE_ADDR
+              value: "orders.ecommerce:8080"
+            - name: SHIPPING_SERVICE_ADDR
+              value: "shipping.ecommerce:8080"
+            - name: PAYMENT_SERVICE_ADDR
+              value: "payment.ecommerce:8080"
