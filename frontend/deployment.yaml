@@ -28,7 +28,7 @@ spec:
               value: "user.ecommerce:8080"
             - name: ORDERS_SERVICE_ADDR
               value: "orders.ecommerce:8080"
-             - name: CURRENCY_SERVICE_ADDR
+            - name: CURRENCY_SERVICE_ADDR
               value: "currency.ecommerce:8080" 
             - name: SHIPPING_SERVICE_ADDR
               value: "shipping.ecommerce:8080"
