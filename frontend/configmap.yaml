@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+  namespace: ecommerce
+data:
+  PRODUCT_CATALOG_SERVICE_ADDR: "product-catalog.ecommerce:8080"
+  CURRENCY_SERVICE_ADDR: "currency.ecommerce:8080"
+  CART_SERVICE_ADDR: "cart.ecommerce:8080"
+  RECOMMENDATION_SERVICE_ADDR: "recommendation.ecommerce:8080"
+  CHECKOUT_SERVICE_ADDR: "checkout.ecommerce:8080"
+  SHIPPING_SERVICE_ADDR: "shipping.ecommerce:8080"
+  AD_SERVICE_ADDR: "ad.ecommerce:8080"
+  COLLECTOR_SERVICE_ADDR: "collector.ecommerce:4317"
+  SHOPPING_ASSISTANT_SERVICE_ADDR: "assistant.ecommerce:8080"
