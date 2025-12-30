@@ -22,8 +22,8 @@ spec:
           env:
             - name: PRODUCT_CATALOG_SERVICE_ADDR
               value: "product-catalog.ecommerce:8080"
-            - name: CARTS_SERVICE_ADDR
-              value: "carts.ecommerce:8080"
+            - name: CART_SERVICE_ADDR
+              value: "cart.ecommerce:8080"
             - name: USER_SERVICE_ADDR
               value: "user.ecommerce:8080"
             - name: ORDERS_SERVICE_ADDR
