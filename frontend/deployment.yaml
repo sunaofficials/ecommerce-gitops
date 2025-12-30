@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: sunaodisha/ecommerce-frontend:1
+          image: sunaodisha/ecommerce-frontend:3
           ports:
             - containerPort: 80
