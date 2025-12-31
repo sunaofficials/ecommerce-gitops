@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: ecommerce
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: gcr.io/google-samples/microservices-demo/frontend:v0.10.2
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PRODUCT_CATALOG_SERVICE_ADDR
+          value: "product-catalog:3550"
+        - name: CURRENCY_SERVICE_ADDR
+          value: "currency:7000"
+        - name: CART_SERVICE_ADDR
+          value: "cart:7070"
+        - name: RECOMMENDATION_SERVICE_ADDR
+          value: "recommendation:8080"
+        - name: CHECKOUT_SERVICE_ADDR
+          value: "checkout:5050"
+        - name: SHIPPING_SERVICE_ADDR
+          value: "shipping:50051"
+        - name: AD_SERVICE_ADDR
+          value: "adservice:9555"
